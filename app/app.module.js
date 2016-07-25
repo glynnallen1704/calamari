@@ -19,6 +19,7 @@ angular
     'ngTouch',
     'core',
     'core.resource',
+    'core.vendor',
     'resourceList',
     'resourceType'
   ])
