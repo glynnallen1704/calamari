@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-10">
+      <!--Body content-->
+      <table class="table table-bordered table-hover table-striped">
+        <thead>
+        <td>First Name</td><td>Last Name</td><td>Email</td><td>Employee Number</td><td>Type</td><td>Company</td><td>Mobile</td>
+        </thead>
+        <tr>
+          <td>Glynn</td>
+          <td>Allen</td>
+          <td>glynn.allen@me.com</td>
+          <td>A160139</td>
+          <td>Permanent</td>
+          <td>Standard Bank</td>
+          <td>0827126173</td>
+        </tr>
+        <tr ng-repeat="resource in $ctrl.resources">
+          <td>
+            <a href="#!/customers/{{resource.id}}">{{resource.firstName}}</a>
+          </td>
+          <td>
+            {{resource.lastName}}
+          </td>
+          <td>
+            {{resource.emailAddress}}
+          </td>
+          <td>
+            >{{resource.employeeNumber}}
+          </td>
+          <td>
+            {{resource.employeeType}}
+          </td>
+          <td>
+            {{resource.employer.shortName}}
+          </td>
+          <td>
+            {{resource.mobileNumber}}
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
