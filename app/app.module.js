@@ -18,22 +18,11 @@ angular
     'ngSanitize',
     'ngTouch',
     'core',
+    'core.jira',
     'core.resource',
     'core.vendor',
+    'jiraList',
     'resourceList',
-    'resourceType'
-  ])
-  .config(['$locationProvider' ,'$routeProvider',
-  function config($locationProvider, $routeProvider) {
-    $locationProvider.hashPrefix('!');
-
-    $routeProvider.
-    when('/resources', {
-      template: '<resource-list></resource-list>'
-    }).
-    when('/resources/:resourceId', {
-      template: '<resource-list></resource-list>'
-    }).
-    otherwise('/resources');
-  }
+    'resourceType',
+    'dashboardLayout'
   ]);

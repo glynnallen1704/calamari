@@ -1,0 +1,90 @@
+POST /rest/api/2/search HTTP/1.1
+Host: jira.standardbank.co.za:8091
+Content-Type: application/json
+Authorization: Basic ZGVwbG95bWVudDptY2FmMTIz
+Cache-Control: no-cache
+
+{"jql":"project = 'Portfolio Worklist' AND (fixVersion in ('Wolverine') OR affectedVersion in ('Wolverine')) AND status in ('In Progress','To Do','READY FOR TESTING')","startAt":0,"maxResults":20,"fields":["id","key","status","assignee"]}
+
+RESPONSE
+{
+  "expand": "schema,names",
+  "startAt": 0,
+  "maxResults": 20,
+  "total": 34,
+  "issues": [
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,transitions,renderedFields",
+      "id": "199623",
+      "self": "http://jira.standardbank.co.za:8091/rest/api/2/issue/199623",
+      "key": "PW-34267",
+      "fields": {
+        "assignee": {
+          "self": "http://jira.standardbank.co.za:8091/rest/api/2/user?username=robin.swart",
+          "name": "robin.swart",
+          "key": "robin.swart",
+          "emailAddress": "robin.swart@standardbank.co.za",
+          "avatarUrls": {
+            "48x48": "http://jira.standardbank.co.za:8091/secure/useravatar?ownerId=robin.swart&avatarId=13814",
+            "24x24": "http://jira.standardbank.co.za:8091/secure/useravatar?size=small&ownerId=robin.swart&avatarId=13814",
+            "16x16": "http://jira.standardbank.co.za:8091/secure/useravatar?size=xsmall&ownerId=robin.swart&avatarId=13814",
+            "32x32": "http://jira.standardbank.co.za:8091/secure/useravatar?size=medium&ownerId=robin.swart&avatarId=13814"
+          },
+          "displayName": "Robin Swart",
+          "active": true,
+          "timeZone": "Africa/Maseru"
+        },
+        "status": {
+          "self": "http://jira.standardbank.co.za:8091/rest/api/2/status/10027",
+          "description": "",
+          "iconUrl": "http://jira.standardbank.co.za:8091/images/icons/subtask.gif",
+          "name": "To Do",
+          "id": "10027",
+          "statusCategory": {
+            "self": "http://jira.standardbank.co.za:8091/rest/api/2/statuscategory/2",
+            "id": 2,
+            "key": "new",
+            "colorName": "blue-gray",
+            "name": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,transitions,renderedFields",
+      "id": "199104",
+      "self": "http://jira.standardbank.co.za:8091/rest/api/2/issue/199104",
+      "key": "PW-34200",
+      "fields": {
+        "assignee": {
+          "self": "http://jira.standardbank.co.za:8091/rest/api/2/user?username=charles+okot",
+          "name": "charles okot",
+          "key": "charles okot",
+          "emailAddress": "charles.okot@standardbank.co.za",
+          "avatarUrls": {
+            "48x48": "http://jira.standardbank.co.za:8091/secure/useravatar?ownerId=charles+okot&avatarId=16609",
+            "24x24": "http://jira.standardbank.co.za:8091/secure/useravatar?size=small&ownerId=charles+okot&avatarId=16609",
+            "16x16": "http://jira.standardbank.co.za:8091/secure/useravatar?size=xsmall&ownerId=charles+okot&avatarId=16609",
+            "32x32": "http://jira.standardbank.co.za:8091/secure/useravatar?size=medium&ownerId=charles+okot&avatarId=16609"
+          },
+          "displayName": "Charles Okot",
+          "active": true,
+          "timeZone": "Africa/Maseru"
+        },
+        "status": {
+          "self": "http://jira.standardbank.co.za:8091/rest/api/2/status/3",
+          "description": "This issue is being actively worked on at the moment by the assignee.",
+          "iconUrl": "http://jira.standardbank.co.za:8091/images/icons/statuses/generic.png",
+          "name": "In Progress",
+          "id": "3",
+          "statusCategory": {
+            "self": "http://jira.standardbank.co.za:8091/rest/api/2/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        }
+      }
+    },
+    {

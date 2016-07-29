@@ -7,36 +7,46 @@ module('resourceType').
 component('resourceType', {
   templateUrl: 'components/resource-type/resource-type.template.html',
   controller: function ResourceTypeController(Resource) {
-    this.resources = Resource.query();
     var perm = 0;
     var contractors = 0;
     var turnkey = 0;
-    for (var item in this.resources) {
-      console.log(item);
-      console.log('DID I EVER GET HERE!!!');
-      if (item.employeeType == 'perm'){
-        perm=perm+1;
+    this.resources = Resource.query();
+
+    this.resources.$promise.then(
+      function(employees) {
+
+        for (var i = 0; i < employees.length; i++) {
+          if (employees[i].employeeType == 'turnkey'){
+            turnkey+=1;
+          }
+          if (employees[i].employeeType == 'perm'){
+            perm+=1;
+          }
+          if (employees[i].employeeType == 'contractor'){
+            contractors+=1;
+          }
+        }
+        Morris.Donut({
+          element: 'resource-type-donut',
+          data: [{
+            label: "Perm",
+            value: perm
+          }, {
+            label: "Contractor",
+            value: contractors
+          }, {
+            label: "Turnkey",
+            value: turnkey
+          }],
+          resize: true
+        });
+      },
+      function(errorPayload) {
+        $log.error('failure loading resource', errorPayload);
       }
-      if (item.employeeType == 'contractor'){
-        contractors=contractors+1;
-      }
-      if (item.employeeType == 'turnkey'){
-        turnkey=turnkey+1;
-      }
-    }
-    Morris.Donut({
-        element: 'resource-type-donut',
-        data: [{
-          label: "Perm",
-          value: 16
-        }, {
-          label: "Contractor",
-          value: 16
-        }, {
-          label: "Turnkey",
-          value: 142
-        }],
-        resize: true
-      });
-    }
+    );
+
+
+  }
+
 });
