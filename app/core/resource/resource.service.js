@@ -9,7 +9,6 @@ factory('Resource', ['$resource',
       query: {
         method: 'GET',
         isArray: true,
-        params: {resourceId:this.id}
       },
       create: {
         method: 'POST',
