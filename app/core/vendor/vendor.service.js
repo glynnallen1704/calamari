@@ -8,8 +8,13 @@ factory('Vendor', ['$resource',
     return $resource(urlBase+'vendor/:vendorId', {}, {
       query: {
         method: 'GET',
-        isArray: true,
-        params: {vendorId:this.id}
+        isArray: true
+
+      },
+      fetchVendor: {
+        method: 'GET',
+        params: {vendorId: ':vendorId'},
+        isArray: false
       },
       create: {
         method: 'POST',

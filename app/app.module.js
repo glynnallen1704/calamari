@@ -24,5 +24,8 @@ angular
     'jiraList',
     'resourceList',
     'resourceType',
+    'vendorList',
+    'vendorDelete',
+    'vendorDetail',
     'dashboardLayout'
   ]);
