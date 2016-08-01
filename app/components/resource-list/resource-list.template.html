@@ -1,35 +1,22 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
+
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-10">
+    <div class="card-columns">
       <!--Body content-->
-      <table class="table table-bordered table-hover table-striped">
-        <thead>
-        <td>First Name</td><td>Last Name</td><td>Email</td><td>Employee Number</td><td>Type</td><td>Company</td><td>Mobile</td>
-        </thead>
-        <tr ng-repeat="resource in $ctrl.resources">
-          <td>
-            <a href="#!/resources/{{resource.id}}">{{resource.firstName}}</a>
-          </td>
-          <td>
-            {{resource.lastName}}
-          </td>
-          <td>
-            {{resource.emailAddress}}
-          </td>
-          <td>
-            {{resource.employeeNumber}}
-          </td>
-          <td>
-            {{resource.employeeType}}
-          </td>
-          <td>
-            {{resource.employer.shortName}}
-          </td>
-          <td>
-            {{resource.mobileNumber}}
-          </td>
-        </tr>
-      </table>
+      <div class="card card-block" ng-repeat="resource in $ctrl.resources">
+        <h4 class="card-title"><a href="#!/resources/{{resource.id}}">{{resource.firstName}} {{resource.lastName}}</a></h4>
+        <p class="card-text">{{resource.emailAddress}}</p>
+        <p class="card-text">{{resource.employeeNumber}}</p>
+        <p class="card-text">{{resource.employeeType}}</p>
+        <p class="card-text">{{resource.employer.shortName}}</p>
+        <p class="card-text">{{resource.mobileNumber}}</p>
+        <p class="card-text"><small class="text-muted">Last updated at {{resource.updatedAt}}</small></p>
+      </div>
+
+
+
     </div>
   </div>
 </div>
