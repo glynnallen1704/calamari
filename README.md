@@ -16,6 +16,12 @@ Running `grunt test` will run the unit tests with karma.
 #What is it?
 This project was created as a quick demo site for those wanting to check out angular 1.5 
 
+#Install commands
+sudo npm -g install
+Npm install -g bower
+npm install -g grunt-cli
+bower install
+
 #Useful Links
 Angular App
 Yeoman for Angular
