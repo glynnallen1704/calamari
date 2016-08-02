@@ -3,5 +3,5 @@
  */
 'use strict';
 
-angular.module('vendorDetail',['core.vendor']);
+angular.module('vendorEdit',['core.vendor']);
 

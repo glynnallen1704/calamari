@@ -17,6 +17,9 @@ config(['$locationProvider', '$routeProvider',
     when('/vendors/:vendorId', {
       template: '<vendor-detail></vendor-detail>'
     }).
+    when('/vendors/edit/:vendorId', {
+      template: '<vendor-edit></vendor-edit>'
+    }).
     when('/dashboard', {
       template: '<dashboard-layout></dashboard-layout>'
     }).

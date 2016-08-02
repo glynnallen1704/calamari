@@ -27,5 +27,6 @@ angular
     'vendorList',
     'vendorDelete',
     'vendorDetail',
+    'vendorEdit',
     'dashboardLayout'
   ]);

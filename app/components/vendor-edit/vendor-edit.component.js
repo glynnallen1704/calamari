@@ -1,10 +1,10 @@
 angular.
-module('vendorDetail').
-component('vendorDetail', {
-  templateUrl: 'components/vendor-detail/vendor-detail.template.html',
+module('vendorEdit').
+component('vendorEdit', {
+  templateUrl: 'components/vendor-edit/vendor-edit.template.html',
   controller: ['$routeParams', 'Vendor',
-    function VendorDetailController($routeParams, Vendor) {
-      this.vendor = Vendor.fetchVendor({vendorId: $routeParams.vendorId});
+    function VendorEditController($routeParams, Vendor) {
+      this.vendor = Vendor.update({vendorId: $routeParams.vendorId});
     }
   ]
 });

@@ -20,7 +20,7 @@ factory('Vendor', ['$resource',
         method: 'POST',
         isArray: false
       },
-      save: {
+      update: {
           method: 'PUT',
           isArray: false
       },
