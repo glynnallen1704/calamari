@@ -15,3 +15,14 @@ Running `grunt test` will run the unit tests with karma.
 
 #What is it?
 This project was created as a quick demo site for those wanting to check out angular 1.5 
+
+#Useful Links
+Angular App
+Yeoman for Angular
+Heroku
+The API we Build
+SailsJS
+AngularJS
+Atom 
+WebStorm - IDE for AngularJS
+
