@@ -9,7 +9,9 @@ component('resourceType', {
   controller: function ResourceTypeController(Resource) {
     var perm = 0;
     var contractors = 0;
+    var vacancy = 0;
     var turnkey = 0;
+    var capacity = 0;
     this.resources = Resource.query();
 
     this.resources.$promise.then(
@@ -25,6 +27,12 @@ component('resourceType', {
           if (employees[i].employeeType == 'contractor'){
             contractors+=1;
           }
+          if (employees[i].employeeType == 'vacancy'){
+            vacancy+=1;
+          }
+          if (employees[i].employeeType == 'capacity'){
+            capacity+=1;
+          }
         }
         Morris.Donut({
           element: 'resource-type-donut',
@@ -37,7 +45,15 @@ component('resourceType', {
           }, {
             label: "Turnkey",
             value: turnkey
-          }],
+          },
+            {
+              label: "Vacancy",
+              value: vacancy
+            },
+            {
+              label: "Capacity",
+              value: capacity
+            }],
           resize: true
         });
       },

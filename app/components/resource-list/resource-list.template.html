@@ -77,21 +77,41 @@
     </div>
     </div>
   <div class="row">
-
+    <h4>Total Resources - {{$ctrl.resources.length}}</h4>
     <div class="card-columns">
       <!--Body content-->
-      <div class="card card-block" ng-repeat="resource in $ctrl.resources | filter:$ctrl.query">
-        <h4 class="card-title"><a href="#!/resources/{{resource.id}}">{{resource.firstName}} {{resource.lastName}}</a></h4>
-        <p class="card-text">{{resource.emailAddress}}</p>
-        <p class="card-text">{{resource.employeeNumber}}</p>
-        <p class="card-text">{{resource.employeeType}}</p>
-        <p class="card-text">{{resource.employer.shortName}}</p>
-        <p class="card-text">{{resource.mobileNumber}}</p>
-        <p class="card-text"><small class="text-muted">Last updated at {{resource.updatedAt}}</small></p>
+      <div class="card" ng-repeat="resource in $ctrl.resources | filter:$ctrl.query">
+        <h3 ng-if="resource.employeeType == 'perm'" class="card-header">
+          <a href="#!/resources/{{resource.id}}">{{resource.firstName}} {{resource.lastName}}</a>
+          <span class="icon-stack">
+            <i class="fa fa-user fa-fw"></i>
+          </span>
+        </h3>
+        <h3 ng-if="resource.employeeType == 'turnkey'" class="card-header"><a href="#!/resources/{{resource.id}}">{{resource.firstName}} {{resource.lastName}}</a>
+          <span class="icon-stack">
+            <i class="fa fa-key fa-fw"></i>
+          </span>
+        </h3>
+        <h3 ng-if="resource.employeeType == 'contractor'" class="card-header"><a href="#!/resources/{{resource.id}}">{{resource.firstName}} {{resource.lastName}}</a>
+          <span class="icon-stack">
+            <i class="fa fa-gavel fa-fw"></i>
+          </span>
+        </h3>
+        <div class="card-block">
+          <p class="card-text">{{resource.emailAddress}}</p>
+          <p class="card-text">{{resource.employeeNumber}}</p>
+          <a href="#!/resources/{{resource.id}}">{{resource.employeeType}}</a>
+          <p>
+            <a href="#!/vendors/{{resource.employer.id}}">{{resource.employer.shortName}}</a>
+          </p>
+          <p class="card-text">{{resource.mobileNumber}}</p>
+          <p class="card-text">{{resource.level.name}}</p>
+          <p class="card-text">{{resource.team.name}}</p>
+        </div>
+          <div class="card-footer text-muted">
+            <p class="card-text"><small class="text-muted">Last updated at {{resource.updatedAt}}</small></p>
+          </div>
       </div>
-
-
-
     </div>
   </div>
 </div>
