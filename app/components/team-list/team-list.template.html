@@ -6,7 +6,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
-          <h3>Find Employer</h3>
+          <h3>Find Team</h3>
         </div>
       </div>
       <div class="row">
@@ -25,13 +25,11 @@
   <div class="row">
     <div class="col-md-10">
       <!--Body content-->
-      <div class="card card-inverse" style="background-color: #333; border-color: #333;" ng-repeat="vendor in $ctrl.vendors | filter:$ctrl.query">
+      <div class="card card-inverse" style="background-color: #333; border-color: #333;" ng-repeat="team in $ctrl.teams | filter:$ctrl.query">
         <div class="card-block">
-          <h3 class="card-title">{{vendor.shortName}}
-
-            </h3>
-          <p class="card-text">{{vendor.description}}</p>
-          <a href="#!/vendors/{{vendor.id}}" class="btn btn-primary"><span class="badge">{{vendor.employees.length}} Employees</span></a>
+          <h3 class="card-title">{{team.name}}</h3>
+          <p class="card-text">{{team.productOwner}}</p>
+          <a href="#!/resources/{{resource.id}}" class="btn btn-primary"><span class="badge">{{team.members.length}} Team Members</span></a>
         </div>
       </div>
     </div>

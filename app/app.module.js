@@ -18,15 +18,15 @@ angular
     'ngSanitize',
     'ngTouch',
     'core',
-    'core.jira',
     'core.resource',
     'core.vendor',
-    'jiraList',
+    'core.team',
     'resourceList',
     'resourceType',
     'vendorList',
     'vendorDelete',
     'vendorDetail',
     'vendorEdit',
+    'teamList',
     'dashboardLayout'
   ]);
