@@ -97,6 +97,11 @@
             <i class="fa fa-gavel fa-fw"></i>
           </span>
         </h3>
+        <h3 ng-if="resource.employeeType == 'vacancy'" class="card-header"><a href="#!/resources/{{resource.id}}">VACANCY</a>
+          <span class="icon-stack">
+            <i class="fa fa-gavel fa-fw"></i>
+          </span>
+        </h3>
         <div class="card-block">
           <p class="card-text">{{resource.emailAddress}}</p>
 
@@ -104,9 +109,11 @@
           <p>
             <a href="#!/vendors/{{resource.employer.id}}">{{resource.employer.shortName}}</a>
           </p>
+          <p class="card-text">{{resource.employeeNumber}}</p>
           <p class="card-text">{{resource.mobileNumber}}</p>
           <p class="card-text">{{resource.level.name}}</p>
           <p class="card-text">{{resource.team.name}}</p>
+          <p class="card-text" >{{resource.rate.amount | currency:"R"}} <i class="fa fa-money" aria-hidden="true"></i></p>
         </div>
           <div class="card-footer text-muted">
             <p class="card-text"><small class="text-muted">Last updated at {{resource.updatedAt}}</small></p>

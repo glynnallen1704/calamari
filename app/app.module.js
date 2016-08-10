@@ -23,6 +23,7 @@ angular
     'core.team',
     'resourceList',
     'resourceType',
+    'featureteamChart',
     'vendorList',
     'vendorDelete',
     'vendorDetail',

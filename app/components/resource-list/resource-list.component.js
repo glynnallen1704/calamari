@@ -8,5 +8,7 @@ component('resourceList', {
   templateUrl: 'components/resource-list/resource-list.template.html',
   controller: function ResourceListController(Resource) {
     this.resources = Resource.query();
+
+
   }
 });
