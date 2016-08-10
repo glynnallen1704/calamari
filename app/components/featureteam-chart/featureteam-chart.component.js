@@ -12,34 +12,31 @@ component('featureteamChart', {
 
     this.team.$promise.then(
       function(teams) {
-        var myArray = [];
+        var chartArray = [];
         for (var i = 0; i < teams.length; i++) {
-          console.log(i);
-
           var totalCapacity = 0;
 
+          //Calculate the total vacancies per team
           for (var l = 0; l < teams[i].members.length; l++) {
             if (teams[i].members[l].employeeType == 'vacancy') {
               totalCapacity += 1;
             }
           }
 
-          console.log(totalCapacity+' for '+ teams[i].productOwner);
-
-          var myDataElement = {
-            y: teams[i].name,
-            a: teams[i].members.length,
-            b: totalCapacity
+          var chartObject = {
+            name: teams[i].name,
+            totalMembers: teams[i].members.length,
+            vacancyCount: totalCapacity
           };
 
-          myArray.push(myDataElement);
+          chartArray.push(chartObject);
         }
-        console.log(myArray);
+
         Morris.Bar({
           element: 'featureteam-chart-bar',
-          data: myArray,
-          xkey: 'y',
-          ykeys: ['a', 'b'],
+          data: chartArray,
+          xkey: 'name',
+          ykeys: ['totalMembers', 'vacancyCount'],
           labels: ['Resources', 'Vacancy'],
           stacked:true,
           resize:true,
