@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
     <link rel="stylesheet" href="bower_components/metisMenu/dist/metisMenu.css" />
     <link rel="stylesheet" href="bower_components/morrisjs/morris.css" />
+    <link rel="stylesheet" href="bower_components/datatables-responsive/css/dataTables.responsive.css" />
     <link rel="stylesheet" href="bower_components/bootstrap-social/bootstrap-social.css" />
     <link rel="stylesheet" href="bower_components/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css" />
     <!-- endbower -->
@@ -323,14 +324,20 @@
 
       <div id="page-wrapper">
         <div class="row">
-          <div class="col-lg-12">
+          <div class="col-lg-12 col-md-6">
             <h1 class="page-header">SBG Mobile Overview</h1>
           </div>
           <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+        <div class="row" class="col-lg-12 col-md-6">
+          <div ng-view="">
 
-        <div ng-view="">
+          </div>
+          <!-- /.col-lg-12 -->
+        </div>
+
+
 
         </div>
         <!-- /.row -->
@@ -379,6 +386,7 @@
     <script src="bower_components/morrisjs/morris.js"></script>
     <script src="bower_components/datatables-responsive/js/dataTables.responsive.js"></script>
     <script src="bower_components/flot.tooltip/js/jquery.flot.tooltip.js"></script>
+    <script src="bower_components/tether/dist/js/tether.js"></script>
     <!-- endbower -->
     <script src="bower_components/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js"></script>
     <!-- endbuild -->
@@ -396,6 +404,9 @@
 
         <script src="components/resource-list/resource-list.module.js"></script>
         <script src="components/resource-list/resource-list.component.js"></script>
+
+        <script src="components/resource-detail/resource-detail.module.js"></script>
+        <script src="components/resource-detail/resource-detail.component.js"></script>
         <script src="components/vendor-list/vendor-list.module.js"></script>
         <script src="components/vendor-list/vendor-list.component.js"></script>
         <script src="components/vendor-delete/vendor-delete.module.js"></script>

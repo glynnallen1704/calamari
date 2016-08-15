@@ -29,5 +29,6 @@ angular
     'vendorDetail',
     'vendorEdit',
     'teamList',
-    'dashboardLayout'
+    'dashboardLayout',
+    'resourceDetail'
   ]);
