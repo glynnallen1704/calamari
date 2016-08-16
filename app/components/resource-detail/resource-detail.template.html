@@ -283,7 +283,7 @@
             <ul>
               <li ng-repeat="skill in $ctrl.resource.skills">
                 {{skill.name}}
-                <span class='bar percent-100'></span>
+                <span class='bar percent-{{skill.level}}'></span>
               </li>
             </ul>
           </div>

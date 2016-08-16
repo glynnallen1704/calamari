@@ -1,125 +1,244 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
 <style>
-  .search-form .form-group {
-    float: right !important;
-    transition: all 0.35s, border-radius 0s;
-    width: 32px;
-    height: 32px;
-    background-color: #fff;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-    border-radius: 25px;
-    border: 1px solid #ccc;
-  }
-  .search-form .form-group input.form-control {
-    padding-right: 20px;
-    border: 0 none;
-    background: transparent;
-    box-shadow: none;
-    display:block;
-  }
-  .search-form .form-group input.form-control::-webkit-input-placeholder {
-    display: none;
-  }
-  .search-form .form-group input.form-control:-moz-placeholder {
-    /* Firefox 18- */
-    display: none;
-  }
-  .search-form .form-group input.form-control::-moz-placeholder {
-    /* Firefox 19+ */
-    display: none;
-  }
-  .search-form .form-group input.form-control:-ms-input-placeholder {
-    display: none;
-  }
-  .search-form .form-group:hover,
-  .search-form .form-group.hover {
+  @import url(https://fonts.googleapis.com/css?family=Raleway:400,200,300,800);
+  @import url(http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+  figure.snip0057 {
+    font-family: 'Raleway', Arial, sans-serif;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 10px 1%;
+    min-width: 380px;
+    max-width: 480px;
     width: 100%;
-    border-radius: 4px 25px 25px 4px;
+    background: #ffffff;
+    color: #000000;
   }
-  .search-form .form-group span.form-control-feedback {
-    position: absolute;
-    top: -1px;
-    right: -2px;
-    z-index: 2;
+  figure.snip0057 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+  }
+  figure.snip0057 .image {
+    width: 50%;
+    overflow: hidden;
+    z-index: 1;
+    -webkit-transform: skewX(-15deg);
+    transform: skewX(-15deg);
+  }
+  figure.snip0057 .image img {
+    position: relative;
     display: block;
-    width: 34px;
-    height: 34px;
-    line-height: 34px;
-    text-align: center;
-    color: #3596e0;
-    left: initial;
-    font-size: 14px;
+    left: -15%;
+    z-index: 1;
+    -webkit-transform: skew(15deg);
+    transform: skew(15deg);
+  }
+  figure.snip0057:before {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 45%;
+    background: rgba(0, 0, 0, 0.2);
+    -webkit-transform: skewX(-17deg);
+    transform: skewX(-17deg);
+    -webkit-box-shadow: 15px 0px 25px rgba(0, 0, 0, 0.7);
+    box-shadow: 15px 0px 25px rgba(0, 0, 0, 0.7);
+  }
+  figure.snip0057 figcaption {
+    padding: 20px 30px 20px 20px;
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    width: 50%;
+  }
+  figure.snip0057 figcaption h2,
+  figure.snip0057 figcaption p {
+    margin: 0;
+    text-align: right;
+    padding: 10px 0;
+    width: 100%;
+  }
+  figure.snip0057 figcaption h2 {
+    font-size: 1.3em;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  figure.snip0057 figcaption h2 span {
+    font-weight: 800;
+  }
+  figure.snip0057 figcaption p {
+    font-size: 0.9em;
+    opacity: 0.8;
+  }
+  figure.snip0057 figcaption .icons {
+    width: 100%;
+    text-align: right;
+  }
+  figure.snip0057 figcaption .icons i {
+    font-size: 26px;
+    padding: 5px;
+    top: 50%;
+    color: #000000;
+    opacity: 0;
+  }
+  figure.snip0057 figcaption a {
+    opacity: 0.3;
+  }
+  figure.snip0057 figcaption a:hover {
+    opacity: 0.8;
+  }
+  figure.snip0057 .position {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: right;
+    padding: 15px 30px;
+    font-size: 0.9em;
+    opacity: 1;
+    font-style: italic;
+    color: #ffffff;
+    background: #000000;
+  }
+  figure.snip0057.blue .position {
+    background: #20638f;
+  }
+  figure.snip0057.red .position {
+    background: #962d22;
+  }
+  figure.snip0057.yellow .position {
+    background: #bf6516;
+  }
+  figure.snip0057.green .position {
+    background: green;
+  }
+
+  figure.snip0057:hover figcaption,
+  figure.snip0057.hover figcaption {
+    bottom: 40px;
+  }
+  figure.snip0057:hover .icons i,
+  figure.snip0057.hover .icons i {
+    opacity: 1;
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+  }
+  figure.snip0057:hover:before,
+  figure.snip0057.hover:before {
+    -webkit-animation: shadow 0.6s ease-in-out;
+    animation: shadow 0.6s ease-in-out;
+  }
+  @-webkit-keyframes shadow {
+    0% {
+      left: 0px;
+    }
+    50% {
+      left: -5px;
+    }
+    100% {
+      left: 0px;
+    }
+  }
+  @keyframes shadow {
+    0% {
+      left: 0px;
+    }
+    50% {
+      left: -5px;
+    }
+    100% {
+      left: 0px;
+    }
   }
 
 </style>
-
-<div class="container-fluid">
-
-  <div class="row">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <h3>Find Employee</h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4 col-md-offset-3">
-          <form action="" class="search-form">
-            <div class="form-group has-feedback">
-              <label for="search" class="sr-only">Search</label>
-              <input type="text" class="form-control" name="search" id="search" placeholder="search" ng-model="$ctrl.query" />
-              <span class="glyphicon glyphicon-search form-control-feedback"></span>
-            </div>
-          </form>
-        </div>
+<script type="javascript">
+  $('.info dd').each(function() {
+    $(this).css({width: $(this).text()+'%'});
+  });
+</script>
+<div class="row">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h3>Find a Legend</h3>
       </div>
     </div>
-    </div>
-  <div class="row">
-    <h4>Total Resources - {{$ctrl.resources.length}}</h4>
-    <div class="card-columns">
-      <!--Body content-->
-      <div class="card" ng-repeat="resource in $ctrl.resources | filter:$ctrl.query">
-        <h3 ng-if="resource.employeeType == 'perm'" class="card-header">
-          <a href="#!/resources/{{resource.id}}">{{resource.firstName}} {{resource.lastName}}</a>
-          <span class="icon-stack">
-            <i class="fa fa-user fa-fw"></i>
-          </span>
-        </h3>
-        <h3 ng-if="resource.employeeType == 'turnkey'" class="card-header"><a href="#!/resources/{{resource.id}}">{{resource.firstName}} {{resource.lastName}}</a>
-          <span class="icon-stack">
-            <i class="fa fa-key fa-fw"></i>
-          </span>
-        </h3>
-        <h3 ng-if="resource.employeeType == 'contractor'" class="card-header"><a href="#!/resources/{{resource.id}}">{{resource.firstName}} {{resource.lastName}}</a>
-          <span class="icon-stack">
-            <i class="fa fa-gavel fa-fw"></i>
-          </span>
-        </h3>
-        <h3 ng-if="resource.employeeType == 'vacancy'" class="card-header"><a href="#!/resources/{{resource.id}}">VACANCY</a>
-          <span class="icon-stack">
-            <i class="fa fa-gavel fa-fw"></i>
-          </span>
-        </h3>
-        <div class="card-block">
-          <p class="card-text">{{resource.emailAddress}}</p>
-
-          <a href="#!/resources/{{resource.id}}">{{resource.employeeType}}</a>
-          <p>
-            <a href="#!/vendors/{{resource.employer.id}}">{{resource.employer.shortName}}</a>
-          </p>
-          <p class="card-text">{{resource.employeeNumber}}</p>
-          <p class="card-text">{{resource.mobileNumber}}</p>
-          <p class="card-text">{{resource.level.name}}</p>
-          <p class="card-text">{{resource.team.name}}</p>
-          <p class="card-text" >{{resource.rate.amount | currency:"R"}} <i class="fa fa-money" aria-hidden="true"></i></p>
-        </div>
-          <div class="card-footer text-muted">
-            <p class="card-text"><small class="text-muted">Last updated at {{resource.updatedAt}}</small></p>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-3">
+        <form action="" class="search-form">
+          <div class="form-group has-feedback">
+            <label for="search" class="sr-only">Search</label>
+            <input type="text" class="form-control" name="search" id="search" placeholder="search" ng-model="$ctrl.query" />
+            <span class="glyphicon glyphicon-search form-control-feedback"></span>
           </div>
+        </form>
       </div>
     </div>
   </div>
 </div>
+<div class="row">
+  <div class="card col-sm-12 col-md-6 col-lg-4" ng-repeat="resource in $ctrl.resources | filter:$ctrl.query">
 
+    <figure ng-if="resource.employeeType == 'turnkey'" class="snip0057 red">
+      <figcaption>
+        <h2>{{resource.firstName}} <span>{{resource.lastName}}</span></h2>
+        <p>{{resource.level.name}}</p>
+        <p>{{resource.employer.shortName}}</p>
+        <p ng-repeat="skill in resource.skills">
+          {{skill.name}}
+        </p>
+        <div class="icons">
+          <a href="#!/resources/{{resource.id}}"><i class="ion-ios-home"></i></a>
+          <a href="#"><i class="ion-ios-email"></i></a>
+          <a href="#"><i class="ion-ios-telephone"></i></a>
+        </div>
+      </figcaption>
+      <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample4.jpg" alt="sample4"/></div>
+      <div class="position">{{resource.team.name}}</div>
+    </figure>
+    <figure ng-if="resource.employeeType == 'perm'" class="snip0057 green">
+      <figcaption>
+        <h2>{{resource.firstName}} <span>{{resource.lastName}}</span></h2>
+        <p>{{resource.level.name}}</p>
+        <p>{{resource.employer.shortName}}</p>
+        <div class="icons">
+          <a href="#!/resources/{{resource.id}}"><i class="ion-ios-home"></i></a>
+          <a href="#"><i class="ion-ios-email"></i></a>
+          <a href="#"><i class="ion-ios-telephone"></i></a>
+        </div>
+      </figcaption>
+      <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample4.jpg" alt="sample4"/></div>
+      <div class="position">{{resource.team.name}}</div>
+    </figure>
+    <figure ng-if="resource.employeeType == 'contractor'" class="snip0057 yellow">
+      <figcaption>
+        <h2>{{resource.firstName}} <span>{{resource.lastName}}</span></h2>
+        <p>{{resource.level.name}}</p>
+        <p>{{resource.employer.shortName}}</p>
+        <div class="icons">
+          <a href="#!/resources/{{resource.id}}"><i class="ion-ios-home"></i></a>
+          <a href="#"><i class="ion-ios-email"></i></a>
+          <a href="#"><i class="ion-ios-telephone"></i></a>
+        </div>
+      </figcaption>
+      <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample4.jpg" alt="sample4"/></div>
+      <div class="position">{{resource.team.name}}</div>
+    </figure>
+    <figure ng-if="resource.employeeType == 'vacancy'" class="snip0057 pink">
+      <figcaption>
+        <h2>Needs <span>Hiring!</span></h2>
+        <p>{{resource.level.name}}</p>
+        <p>{{resource.employer.shortName}}</p>
+        <div class="icons">
+          <a href="#!/resources/{{resource.id}}"><i class="ion-ios-home"></i></a>
+          <a href="#"><i class="ion-ios-email"></i></a>
+          <a href="#"><i class="ion-ios-telephone"></i></a>
+        </div>
+      </figcaption>
+      <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample4.jpg" alt="sample4"/></div>
+      <div class="position">{{resource.team.name}}</div>
+    </figure>
+  </div>
+</div>

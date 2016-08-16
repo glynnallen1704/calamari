@@ -15,12 +15,17 @@ factory('Resource', ['$resource',
         isArray: false
       },
       save: {
-          method: 'PUT',
-          isArray: false
+        method: 'PUT',
+        isArray: false
       },
       remove: {
-          method: 'DELETE',
-          isArray: false
+        method: 'DELETE',
+        isArray: false
+      },
+      fetchResource: {
+        method: 'GET',
+        params: {resourceId: ':resourceId'},
+        isArray: false
       }
     }
     )

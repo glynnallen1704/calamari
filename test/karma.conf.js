@@ -44,6 +44,7 @@ module.exports = function(config) {
       'app/bower_components/datatables-responsive/js/dataTables.responsive.js',
       'app/bower_components/flot.tooltip/js/jquery.flot.tooltip.js',
       'app/bower_components/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js',
+      'app/bower_components/tether/dist/js/tether.js',
       // endbower
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
