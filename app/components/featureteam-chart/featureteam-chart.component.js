@@ -16,6 +16,7 @@ component('featureteamChart', {
         for (var i = 0; i < teams.length; i++) {
           var totalCapacity = 0;
 
+
           //Calculate the total vacancies per team
           for (var l = 0; l < teams[i].members.length; l++) {
             if (teams[i].members[l].employeeType == 'vacancy') {
@@ -25,8 +26,9 @@ component('featureteamChart', {
 
           var chartObject = {
             name: teams[i].name,
-            totalMembers: teams[i].members.length,
-            vacancyCount: totalCapacity
+            totalMembers: teams[i].members.length - totalCapacity,
+            vacancyCount: totalCapacity,
+            approved: teams[i].devSafeApprovedNumber
           };
 
           chartArray.push(chartObject);
@@ -36,11 +38,11 @@ component('featureteamChart', {
           element: 'featureteam-chart-bar',
           data: chartArray,
           xkey: 'name',
-          ykeys: ['totalMembers', 'vacancyCount'],
-          labels: ['Resources', 'Vacancy'],
+          ykeys: ['totalMembers', 'vacancyCount','approved'],
+          labels: ['On-Boarded', 'Vacancy','SAFE Approved'],
           stacked:true,
           resize:true,
-          gridTextSize: 10
+          gridTextSize: 8
         });
       },
       function(errorPayload) {

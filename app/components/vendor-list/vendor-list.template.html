@@ -1,6 +1,3 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
-
 <div class="container-fluid">
   <div class="row">
     <div class="container">
@@ -23,18 +20,23 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-10">
-      <!--Body content-->
-      <div class="card card-inverse" style="background-color: #333; border-color: #333;" ng-repeat="vendor in $ctrl.vendors | filter:$ctrl.query">
-        <div class="card-block">
-          <h3 class="card-title">{{vendor.shortName}}
-
-            </h3>
-          <p class="card-text">{{vendor.description}}</p>
-          <a href="#!/vendors/{{vendor.id}}" class="btn btn-primary"><span class="badge">{{vendor.employees.length}} Employees</span></a>
-        </div>
+    <div class="panel panel-default" ng-repeat="vendor in $ctrl.vendors | filter:$ctrl.query">
+  <div class="panel-heading clearfix">
+    <h3 class="panel-title pull-left">{{vendor.shortName}} <span class="badge">{{vendor.employees.length}} Employees</span></h3>
+      <a href="#!/vendors/{{vendor.id}}" class="btn btn-primary pull-right"><i class="fa fa-pencil"></i></a>
+    </div>
+    <div class="list-group">
+      <div class="list-group-item">
+        <p class="list-group-item-text">{{vendor.longName}}</p>
+        <h4 class="list-group-item-heading">{{vendor.accountManager}}</h4>
+      </div>
+      <div class="list-group-item">
+        <p class="list-group-item-text">Short Biography of the organisation and perhaps the available capacity</p>
       </div>
     </div>
+  <div class="panel-footer">
+    <small>Last Updated - {{vendor.updatedAt}}</small>
   </div>
 </div>
-
+  </div>
+</div>

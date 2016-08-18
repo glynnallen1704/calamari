@@ -1,21 +1,42 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
-
-<form>
-  <div class="row">
-    <div class="col-md-10">
-      <!--Body content-->
-      <div class="card">
-        <div class="card-block">
-          Name: <input type="text" class="form-control" id="name" placeholder="{{$ctrl.vendor.shortName}}">
-          Description: <input type="text" class="form-control" id="desc" placeholder="{{$ctrl.vendor.description}}">
-          Account Manager: <input type="text" class="form-control" id="acc" placeholder="{{$ctrl.vendor.accountManager}}">
-          Image URL: <input type="text" class="form-control" id="img" placeholder="{{$ctrl.vendor.imageURL}}">
-        </div>
-        <div class="card-block">
-          <a href="#!/vendors/save/{{$ctrl.vendor.id}}" class="btn btn-info">Save</a>
-        </div>
-      </div>
+<div class="panel panel-default">
+  <div class="panel-heading clearfix">
+    <h3 class="panel-title pull-left">{{$ctrl.vendor.shortName}} <span class="badge">{{$ctrl.vendor.employees.length}}</></h3>
+    <div class="btn-group pull-right">
+      <button class="btn btn-danger">
+        <i class="fa fa-times"></i>
+        Cancel
+      </button>
     </div>
   </div>
-</form>
+  <div class="modal-body">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="col-xs-3 control-label">Account Manager</label>
+        <div class="col-xs-9">
+          <input type="text" class="form-control" value="{{$ctrl.vendor.accountManager}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-xs-3 control-label">Vendor Short Name</label>
+        <div class="col-xs-9">
+          <input type="text" class="form-control" value="{{$ctrl.vendor.shortName}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-xs-3 control-label">Vendor Long Name</label>
+        <div class="col-xs-9">
+          <input type="text" class="form-control" value="{{$ctrl.vendor.longName}}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-xs-3 control-label">Description</label>
+        <div class="col-xs-9">
+          <textarea class="form-control" rows="6">{{$ctrl.vendor.description}}</textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="panel-footer">
+    <small>{{$ctrl.vendor.updatedAt}}</small>
+  </div>
+</div>
