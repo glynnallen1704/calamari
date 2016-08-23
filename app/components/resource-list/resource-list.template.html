@@ -88,124 +88,69 @@
   </div>
 </div>
 <div class="row">
-  <div class="card col-sm-12 col-md-6 col-lg-4" ng-repeat="resource in $ctrl.resources | filter:$ctrl.query">
-
-    <figure ng-if="resource.employeeType == 'turnkey'" class="snip0057 red">
-      <figcaption>
-        <h2>{{resource.firstName}} <span>{{resource.lastName}}</span></h2>
-        <p>{{resource.level.name}}</p>
-        <p>{{resource.employer.shortName}}</p>
-        <p ng-repeat="skill in resource.skills">
-          {{skill.name}}
-        </p>
-        <div class="icons">
-          <a href="#!/resources/{{resource.id}}"><i class="ion-ios-home"></i></a>
-          <a href="#"><i class="ion-ios-email"></i></a>
-          <a href="#"><i class="ion-ios-telephone"></i></a>
-        </div>
-      </figcaption>
-      <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample4.jpg" alt="sample4"/></div>
-      <div class="position">{{resource.team.name}}</div>
-    </figure>
-    <figure ng-if="resource.employeeType == 'perm'" class="snip0057 green">
-      <figcaption>
-        <h2>{{resource.firstName}} <span>{{resource.lastName}}</span></h2>
-        <p>{{resource.level.name}}</p>
-        <p>{{resource.employer.shortName}}</p>
-        <div class="icons">
-          <a href="#!/resources/{{resource.id}}"><i class="ion-ios-home"></i></a>
-          <a href="#"><i class="ion-ios-email"></i></a>
-          <a href="#"><i class="ion-ios-telephone"></i></a>
-        </div>
-      </figcaption>
-      <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample4.jpg" alt="sample4"/></div>
-      <div class="position">{{resource.team.name}}</div>
-    </figure>
-    <figure ng-if="resource.employeeType == 'contractor'" class="snip0057 yellow">
-      <figcaption>
-        <h2>{{resource.firstName}} <span>{{resource.lastName}}</span></h2>
-        <p>{{resource.level.name}}</p>
-        <p>{{resource.employer.shortName}}</p>
-        <div class="icons">
-          <a href="#!/resources/{{resource.id}}"><i class="ion-ios-home"></i></a>
-          <a href="#"><i class="ion-ios-email"></i></a>
-          <a href="#"><i class="ion-ios-telephone"></i></a>
-        </div>
-      </figcaption>
-      <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample4.jpg" alt="sample4"/></div>
-      <div class="position">{{resource.team.name}}</div>
-    </figure>
-    <figure ng-if="resource.employeeType == 'vacancy'" class="snip0057 pink">
-      <figcaption>
-        <h2>Needs <span>Hiring!</span></h2>
-        <p>{{resource.level.name}}</p>
-        <p>{{resource.employer.shortName}}</p>
-        <div class="icons">
-          <a href="#!/resources/{{resource.id}}"><i class="ion-ios-home"></i></a>
-          <a href="#"><i class="ion-ios-email"></i></a>
-          <a href="#"><i class="ion-ios-telephone"></i></a>
-        </div>
-      </figcaption>
-      <div class="image"><img src="../../images/vacancy.png" height="200" width="200">/></div>
-      <div class="position">{{resource.team.name}}</div>
-    </figure>
-  </div>
-</div>
-
-<hr>
-<div class="container bootstrap snippet">
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="main-box no-header clearfix">
-        <div class="main-box-body clearfix">
-          <div class="table-responsive">
-            <table class="table user-list">
-              <thead>
-              <tr>
-                <th><span>User</span></th>
-                <th><span>Created</span></th>
-                <th class="text-center"><span>Status</span></th>
-                <th><span>Email</span></th>
-                <th>&nbsp;</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr ng-repeat="resource in $ctrl.resources | filter:$ctrl.query">
-                <td>
-                  <img src="http://bootdey.com/img/Content/user_1.jpg" alt="">
-                  <a href="#" class="user-link">{{resource.firstName}} {{resource.lastName}}</a>
-                  <span class="user-subhead">Member</span>
-                </td>
-                <td>{{resource.createdAt}}</td>
-                <td class="text-center">
-                  <span class="label label-default">pending</span>
-                </td>
-                <td>
-                  <a href="#">{{resource.emailAddress}}</a>
-                </td>
-                <td style="width: 20%;">
-                  <a href="#" class="table-link">
+  <hr>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="main-box no-header clearfix">
+          <div class="main-box-body clearfix">
+            <div class="table-responsive">
+              <table class="table user-list">
+                <thead>
+                <tr>
+                  <th><span>User</span></th>
+                  <th><span>Updated</span></th>
+                  <th class="text-center"><span>Status</span></th>
+                  <th><span>Level</span></th>
+                  <th><span>Email</span></th>
+                  <th>&nbsp;</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="resource in $ctrl.resources | filter:$ctrl.query">
+                  <td>
+                    <img ng-if="resource.gender == 'male'" src="http://bootdey.com/img/Content/user_1.jpg" alt="male">
+                    <img ng-if="resource.gender == 'female'" src="http://bootdey.com/img/Content/user_2.jpg" alt="female">
+                    <a href="#!/resources/{{resource.id}}" class="user-link">{{resource.firstName}} {{resource.lastName}}</a>
+                    <span class="user-subhead">{{resource.team.name}}</span>
+                  </td>
+                  <td>{{resource.updatedAt}}</td>
+                  <td class="text-center">
+                    <span ng-if="resource.employeeType == 'perm'"  class="label label-success">Perm</span>
+                    <span ng-if="resource.employeeType == 'vacancy'"  class="label label-warning">Vacancy</span>
+                    <span ng-if="resource.employeeType == 'turnkey'"  class="label label-danger">TurnKey</span>
+                    <span ng-if="resource.employeeType == 'contractor'"  class="label label-default">Contractor</span>
+                  </td>
+                  <td>
+                    <a href="#">{{resource.level.name}}</a>
+                  </td>
+                  <td>
+                    <a href="#">{{resource.emailAddress}}</a>
+                  </td>
+                  <td style="width: 20%;">
+                    <a href="#!/resources/{{resource.id}}" class="table-link">
                                             <span class="fa-stack">
                                                 <i class="fa fa-square fa-stack-2x"></i>
                                                 <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
                                             </span>
-                  </a>
-                  <a href="#" class="table-link">
+                    </a>
+                    <a href="#" class="table-link">
                                             <span class="fa-stack">
                                                 <i class="fa fa-square fa-stack-2x"></i>
                                                 <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                             </span>
-                  </a>
-                  <a href="#" class="table-link danger">
+                    </a>
+                    <a href="#" class="table-link danger">
                                             <span class="fa-stack">
                                                 <i class="fa fa-square fa-stack-2x"></i>
                                                 <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
                                             </span>
-                  </a>
-                </td>
-              </tr>
-              </tbody>
-            </table>
+                    </a>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
