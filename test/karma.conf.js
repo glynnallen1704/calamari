@@ -45,6 +45,8 @@ module.exports = function(config) {
       'app/bower_components/flot.tooltip/js/jquery.flot.tooltip.js',
       'app/bower_components/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js',
       'app/bower_components/tether/dist/js/tether.js',
+      'app/bower_components/fastclick/lib/fastclick.js',
+      'app/bower_components/bootcards/dist/js/bootcards.js',
       // endbower
       'app/scripts/**/*.js',
       'test/mock/**/*.js',

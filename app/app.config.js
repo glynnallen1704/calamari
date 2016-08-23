@@ -14,6 +14,9 @@ config(['$locationProvider', '$routeProvider',
     when('/resources/:resourceId', {
       template: '<resource-detail></resource-detail>'
     }).
+    when('/resource/:resourceId', {
+      template: '<resource-edit></resource-edit>'
+    }).
     when('/vendors/:vendorId', {
       template: '<vendor-detail></vendor-detail>'
     }).
@@ -28,6 +31,9 @@ config(['$locationProvider', '$routeProvider',
     }).
     when('/vendors', {
       template: '<vendor-list></vendor-list>'
+    }).
+    when('/levels', {
+      template: '<level-list></level-list>'
     }).
     otherwise({
       redirectTo: '/dashboard'

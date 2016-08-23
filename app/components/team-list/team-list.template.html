@@ -28,7 +28,7 @@
   <div class="row">
     <div class="panel panel-default" ng-repeat="team in $ctrl.teams | filter:$ctrl.query">
       <div class="panel-heading clearfix">
-        <h3 class="panel-title pull-left">{{team.name}} - SAFE APPROVED {{team.devSafeApprovedNumber}}</h3>
+        <h3 class="panel-title pull-left">{{team.name}} - ({{team.members.length}}/{{team.devSafeApprovedNumber}})</h3>
         <a class="btn btn-primary pull-right" href="#">
           <i class="fa fa-pencil"></i>
           Edit
@@ -43,14 +43,13 @@
           <h4 class="list-group-item-heading">Team Members</h4>
           <table class="table table-hover">
             <thead>
-              <tr class="active"><th>Full Name</th><th>Email</th></tr>
+              <tr class="active"><th>Full Name</th></tr>
             </thead>
             <tbody>
             <tr ng-repeat="member in team.members">
-              <td style="background: orangered;color: white" ng-if="member.firstName == ''">HIRE ME!!!!</td>
+              <td style="background: lightslategray;color: white" ng-if="member.firstName == ''">HIRE ME!!!!</td>
               <td style="background: orangered;color: white" ng-if="member.firstName == null">HIRE ME!!!!</td>
               <td ng-if="member.firstName.length > 0">{{member.firstName}} {{member.lastName}}</td>
-              <td>{{member.emailAddress}}</td>
             </tr>
             </tbody>
           </table>

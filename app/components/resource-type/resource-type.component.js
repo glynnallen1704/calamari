@@ -54,7 +54,13 @@ component('resourceType', {
               label: "Capacity",
               value: capacity
             }],
-          resize: true
+          resize: true,
+          formatter: function (value, data) {
+              console.log(value);
+              console.log(data);
+              var total = employees.length;
+              return Math.round(value/178 *100) + '%';
+          }
         });
       },
       function(errorPayload) {

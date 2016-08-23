@@ -16,7 +16,7 @@
             </div>
           </div>
           <div class="col-xs-3">
-            <a class="btn btn-primary btn-block" ng-click="createVendor()">
+            <a class="btn btn-primary btn-block" href="#">
               <i class="fa fa-plus"></i>
               Add
             </a>
@@ -25,14 +25,14 @@
       </form>
     </div>
     <div class="list-group">
-      <a href="#!/vendors/{{vendor.id}}" class="list-group-item" ng-repeat="vendor in $ctrl.vendors | filter:$ctrl.query">
-        <span class="badge">{{vendor.employees.length}}</span>
-        <h4 class="list-group-item-heading" style="padding-right: 1%"> {{vendor.shortName}}</h4>
-        <p class="list-group-item-text">{{vendor.accountManager}}</p>
+      <a href="#!/levels/{{level.id}}" class="list-group-item" ng-repeat="level in $ctrl.levels | filter:$ctrl.query">
+        <span class="badge">{{level.employees.length}}</span>
+        <h4 class="list-group-item-heading" style="padding-right: 1%"> {{level.name}}</h4>
+        <p class="list-group-item-text">{{level.accountManager}}</p>
       </a>
     </div>
     <div class="panel-footer">
-      <small>Standard Bank Approved Suppliers</small>
+      <small>Standard Bank</small>
     </div>
   </div>
 </div>

@@ -21,14 +21,17 @@ angular
     'core.resource',
     'core.vendor',
     'core.team',
+    'core.level',
     'resourceList',
     'resourceType',
+    'resourceEdit',
     'featureteamChart',
     'vendorList',
     'vendorDelete',
     'vendorDetail',
     'vendorEdit',
     'teamList',
+    'levelList',
     'dashboardLayout',
     'resourceDetail'
   ]);

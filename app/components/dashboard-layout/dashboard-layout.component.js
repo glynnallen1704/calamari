@@ -5,9 +5,9 @@
 angular.
 module('dashboardLayout').
 component('dashboardLayout', {
-  templateUrl: 'components/dashboard-layout/dashboard-layout.template.html',
-  controller:
-    function DashboardController(Resource) {
-      this.resources = Resource.query();
-    }
+    templateUrl: 'components/dashboard-layout/dashboard-layout.template.html',
+    controller:
+      function DashboardController(Resource) {
+        this.resources = Resource.query();
+      }
 });

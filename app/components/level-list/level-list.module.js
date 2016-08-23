@@ -3,5 +3,5 @@
  */
 'use strict';
 
-angular.module('resourceDetail',['ngRoute','core.resource']);
+angular.module('levelList',[]);
 

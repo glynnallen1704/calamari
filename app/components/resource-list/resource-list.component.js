@@ -5,10 +5,8 @@
 angular.
 module('resourceList').
 component('resourceList', {
-  templateUrl: 'components/resource-list/resource-list.template.html',
-  controller: function ResourceListController(Resource) {
-    this.resources = Resource.query();
-
-
+  templateUrl: 'components/resource-list/resource-list-new.template.html',
+  controller: function ResourceListController(Resources) {
+    this.resources = Resources.query();
   }
 });
