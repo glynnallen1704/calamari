@@ -24,6 +24,7 @@ angular
     'core.level',
     'resourceList',
     'resourceType',
+    'genderChart',
     'resourceEdit',
     'featureteamChart',
     'vendorList',
