@@ -29,7 +29,7 @@
     <div class="panel panel-default" ng-repeat="team in $ctrl.teams | filter:$ctrl.query">
       <div class="panel-heading clearfix">
         <h3 class="panel-title pull-left">{{team.name}} - ({{team.members.length}}/{{team.devSafeApprovedNumber}})</h3>
-        <a class="btn btn-primary pull-right" href="#">
+        <a class="btn btn-primary pull-right" href="#!/teams/{{team.id}}">
           <i class="fa fa-pencil"></i>
           Edit
         </a>

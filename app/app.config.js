@@ -14,8 +14,14 @@ config(['$locationProvider', '$routeProvider',
     when('/resources/:resourceId', {
       template: '<resource-detail></resource-detail>'
     }).
+    when('/teams/:teamId', {
+      template: '<team-detail></team-detail>'
+    }).
     when('/resource/:resourceId', {
       template: '<resource-edit></resource-edit>'
+    }).
+    when('/team/:teamId', {
+      template: '<team-edit></team-edit>'
     }).
     when('/vendors/:vendorId', {
       template: '<vendor-detail></vendor-detail>'

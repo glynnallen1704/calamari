@@ -26,6 +26,7 @@ angular
     'resourceType',
     'genderChart',
     'resourceEdit',
+    'teamEdit',
     'featureteamChart',
     'vendorList',
     'vendorDelete',
@@ -34,5 +35,6 @@ angular
     'teamList',
     'levelList',
     'dashboardLayout',
-    'resourceDetail'
+    'resourceDetail',
+    'teamDetail'
   ]);

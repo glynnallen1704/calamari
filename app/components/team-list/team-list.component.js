@@ -6,7 +6,7 @@ angular.
 module('teamList').
 component('teamList', {
   templateUrl: 'components/team-list/team-list.template.html',
-  controller: function TeamListController(Team) {
-    this.teams = Team.query();
+  controller: function TeamListController(Teams) {
+    this.teams = Teams.query();
   }
 });
