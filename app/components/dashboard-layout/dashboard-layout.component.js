@@ -7,7 +7,7 @@ module('dashboardLayout').
 component('dashboardLayout', {
     templateUrl: 'components/dashboard-layout/dashboard-layout.template.html',
     controller:
-      function DashboardController(Resource) {
-        this.resources = Resource.query();
+      function DashboardController(Resources) {
+        this.resources = Resources.query();
       }
 });

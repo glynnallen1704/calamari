@@ -5,7 +5,8 @@ angular.module('core.resource').
 factory('Resources', ['$resource',
   function($resource) {
     var urlBase = "https://squid-1704.herokuapp.com/";
-    return $resource(urlBase+'resource', {}, {
+    //Filter on only active resources
+    return $resource(urlBase+'resource?active=true', {}, {
       query: {
         method: 'GET',
         isArray: true

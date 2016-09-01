@@ -1,18 +1,9 @@
-<div class="container">
+<div class="container-fluid">
   <h1>Edit Profile</h1>
   <hr>
   <div class="row">
-    <!-- left column -->
-    <div class="col-md-3">
-      <div class="text-center">
-        <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
-        <h6>Upload a different photo...</h6>
-
-        <input type="file" class="form-control">
-      </div>
-    </div>
     <!-- edit form column -->
-    <div class="col-md-9 personal-info">
+    <div class="col-md-12 personal-info">
       <h3>Personal info</h3>
 
       <form class="form-horizontal" role="form">
@@ -35,21 +26,27 @@
           </div>
         </div>
         <div class="form-group">
-          <select ng-model="$ctrl.resource.gender">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select>
+          <label class="col-lg-3 control-label">Team:</label>
+          <div class="col-lg-8">
+            <input disabled="true" class="form-control" value="$ctrl.resource.team.id" type="text" ng-model="$ctrl.resource.team.name"/>
+          </div>
         </div>
         <div class="form-group">
           <label class="col-lg-3 control-label">Company:</label>
           <div class="col-lg-8">
-            <input class="form-control" type="text" ng-model="resource.vendor.id">
+            <input class="form-control" disabled="true" type="text" ng-model="$ctrl.resource.employer.shortName"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Description:</label>
+          <div class="col-lg-8">
+            <input class="form-control" type="text" ng-model="$ctrl.resource.description"/>
           </div>
         </div>
         <div class="form-group">
           <label class="col-lg-3 control-label">Email:</label>
           <div class="col-lg-8">
-            <input class="form-control" id="firstName" type="text" ng-model="resource.emailAddress">
+            <input class="form-control" id="firstName" type="text" ng-model="$ctrl.resource.emailAddress">
           </div>
         </div>
         <div class="form-group">
@@ -58,6 +55,8 @@
             <input ng-click="$ctrl.saveChanges()" type="button" class="btn btn-primary" value="Save Changes">
             <span></span>
             <input type="reset" class="btn btn-default" value="Cancel">
+            <span></span>
+            <input ng-click="$ctrl.removeUser()" type="button" class="btn btn-danger" value="Delete User">
           </div>
         </div>
       </form>

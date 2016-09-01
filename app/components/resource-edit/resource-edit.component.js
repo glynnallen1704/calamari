@@ -10,12 +10,13 @@ component('resourceEdit', {
 
 
       this.saveChanges = function saveChanges() {
-        Resource.saveResource({resourceId: $routeParams.resourceId}, this.resource,$location);
-
-
+        Resource.saveResource({resourceId: $routeParams.resourceId}, this.resource,$location)
       };
 
-
+      this.removeUser = function removeUser(){
+        this.resource.active = false;
+        Resource.saveResource({resourceId: $routeParams.resourceId}, this.resource,$location)
+      };
 
     }
   ]
