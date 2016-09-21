@@ -11,6 +11,5 @@ component('resourceList', {
     this.resources = Resources.query();
 
 
-
   }
 });
